@@ -21,7 +21,6 @@ import {
   IonListHeader,
 } from "@ionic/react";
 import { TimesheetApproval } from "../../../supabaseApi/types";
-import UserCard from "./UserCard";
 import { chevronBack } from "ionicons/icons";
 import { getPendingTimesheetApprovals } from "../../../supabaseApi/supabaseApi";
 import TimesheetItem from "./TimeEntryItem";
@@ -57,13 +56,12 @@ const TimeTrackingManager: React.FC<{
       <IonHeader>
         <IonToolbar>
           <IonButtons>
-            <IonButton>
-              <IonIcon
-                icon={chevronBack}
-                onClick={() => {
-                  dismissPlugin.dismiss();
-                }}
-              />
+            <IonButton
+              onClick={() => {
+                dismissPlugin.dismiss();
+              }}
+            >
+              <IonIcon icon={chevronBack} />
               Dashboard
             </IonButton>
           </IonButtons>
